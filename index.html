@@ -32,9 +32,6 @@
       text-align: center;
       font-size: 18px;
       background-color: #26282c;
-      /* display: flex; */
-      /* justify-content: center;
-      align-items: center; */
        border-bottom-right-radius: 330px;
     }
 
@@ -44,12 +41,14 @@
       height: 100%;
       object-fit: cover;
     }
+
   </style>
 <body>
       <section class="home">
         <div class="header">
           <div class="logo">
             <h1>CHEFER</h1>
+              <div class="menu-icon" id="menu-icon">&#9776;</div>
           </div>
 
           <div class="navbar">
@@ -66,7 +65,7 @@
 
             <div class="navbar-bottom">
               <div class="navbar-menu">
-                <ul>
+                <ul id="nav-menu">
                   <li><a href="index.html">Home</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="menu.html">Menu</a></li>
@@ -89,6 +88,8 @@
          <div class="name">
              <h1>John Doe</h1>
           </div>
+
+           
 
         <div class="home-main">
          
@@ -142,38 +143,39 @@
         </div>
 
       <section class="stats">
-        <div class="stat-box">
-          <div class="icon"><i class="fas fa-star"></i></div>
-          <div class="stat-degree">
-            <h4>Years</h4>
-          <h2 class="counter" data-target="1234">0</h2>
-          </div>
-        </div>
+  <div class="stat-box">
+    <div class="icon"><i class="fas fa-star"></i></div>
+    <div class="stat-degree">
+      <h4>Years</h4>
+      <h2 class="counter" data-target="1234">0</h2>
+    </div>
+  </div>
 
-        <div class="stat-box">
-          <div class="icon"><i class="fas fa-users"></i></div>
-          <div class="stat-degree">
-            <h4>Clients</h4>
-          <h2 class="counter" data-target="1234">0</h2>
-          </div>
-        </div>
+  <div class="stat-box">
+    <div class="icon"><i class="fas fa-users"></i></div>
+    <div class="stat-degree">
+      <h4>Clients</h4>
+      <h2 class="counter" data-target="1234">0</h2>
+    </div>
+  </div>
 
-        <div class="stat-box">
-          <div class="icon"><i class="fas fa-check"></i></div>
-          <div class="stat-degree">
-            <h4>Awards</h4>
-          <h2 class="counter" data-target="1234">0</h2>
-          </div>
-        </div>
+  <div class="stat-box">
+    <div class="icon"><i class="fas fa-check"></i></div>
+    <div class="stat-degree">
+      <h4>Awards</h4>
+      <h2 class="counter" data-target="1234">0</h2>
+    </div>
+  </div>
 
-        <div class="stat-box">
-          <div class="icon"><i class="fas fa-mug-hot"></i></div>
-          <div class="stat-degree">
-            <h4>Events</h4>
-          <h2 class="counter" data-target="1234">0</h2>
-          </div>
-        </div>
-      </section>
+  <div class="stat-box">
+    <div class="icon"><i class="fas fa-mug-hot"></i></div>
+    <div class="stat-degree">
+      <h4>Events</h4>
+      <h2 class="counter" data-target="1234">0</h2>
+    </div>
+  </div>
+</section>
+
 
       <div class="menu-main">
 
@@ -433,10 +435,22 @@
         </div>
       </footer>
 
+      
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
     <script src="main.js"></script>
+
+    <script>
+  const menuIcon = document.getElementById('menu-icon');
+  const navMenu = document.getElementById('navbar-bottom');
+
+  menuIcon.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  
+</script>
 
 </body>
 </html>

@@ -1,23 +1,23 @@
-const counters = document.querySelectorAll('.counter');
+ const counters = document.querySelectorAll('.counter');
 
-counters.forEach(counter => {
-  counter.innerText = '0';
+  counters.forEach(counter => {
+    counter.innerText = '0';
 
-  const updateCounter = () => {
-    const target = +counter.getAttribute('data-target');
-    const current = +counter.innerText;
-    const increment = target / 100;
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = Math.max(1, target / 100); 
 
-    if (current < target) {
-      counter.innerText = `${Math.ceil(current + increment)}`;
-      setTimeout(updateCounter, 20);
-    } else {
-      counter.innerText = target;
-    }
-  };
+      if (current < target) {
+        counter.innerText = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
 
-  updateCounter();
-});
+    updateCounter();
+  });
 
 
 const labels = document.querySelectorAll('.meals-menu label');
@@ -42,3 +42,24 @@ const labels = document.querySelectorAll('.meals-menu label');
       shuffleImages();
     });
   });
+
+   const btn = document.getElementById('backToTop');
+
+  // scroll bo‘lganda tugmachani ko‘rsat/yashir
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 200) {     // 200px dan pastga tushsa
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+
+  // tugma bosilganda sahifa boshiga siljish (smooth)
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+
